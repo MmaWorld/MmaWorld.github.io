@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://fsantos0701.github.io/</loc>
+    <loc>https://fsantos0701.github.io/MmaWorld/</loc>
     <changefreq>hourly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://fsantos0701.github.io/pages/categoria.html</loc>
+    <loc>https://fsantos0701.github.io/MmaWorld/pages/categoria.html</loc>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fsantos0701.github.io/pages/noticia.html</loc>
+    <loc>https://fsantos0701.github.io/MmaWorld/pages/noticia.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fsantos0701.github.io/pages/eventos.html</loc>
+    <loc>https://fsantos0701.github.io/MmaWorld/pages/eventos.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fsantos0701.github.io/pages/resultados.html</loc>
+    <loc>https://fsantos0701.github.io/MmaWorld/pages/resultados.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fsantos0701.github.io/pages/rankings.html</loc>
+    <loc>https://fsantos0701.github.io/MmaWorld/pages/rankings.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fsantos0701.github.io/pages/videos.html</loc>
+    <loc>https://fsantos0701.github.io/MmaWorld/pages/videos.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fsantos0701.github.io/pages/sobre.html</loc>
+    <loc>https://fsantos0701.github.io/MmaWorld/pages/sobre.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fsantos0701.github.io/pages/contato.html</loc>
+    <loc>https://fsantos0701.github.io/MmaWorld/pages/contato.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fsantos0701.github.io/pages/politica-de-privacidade.html</loc>
+    <loc>https://fsantos0701.github.io/MmaWorld/pages/politica-de-privacidade.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://fsantos0701.github.io/pages/termos-de-uso.html</loc>
+    <loc>https://fsantos0701.github.io/MmaWorld/pages/termos-de-uso.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://fsantos0701.github.io/pages/politica-de-cookies.html</loc>
+    <loc>https://fsantos0701.github.io/MmaWorld/pages/politica-de-cookies.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
