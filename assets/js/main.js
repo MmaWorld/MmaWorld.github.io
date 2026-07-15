@@ -195,6 +195,89 @@
   window.MundoOctogono.showToast = showToast;
 
   /* ------------------------------------------------------------------
+   * Consentimento de cookies
+   * Banner real de aceitar/rejeitar, com escolha salva em localStorage.
+   * Scripts de rastreamento (GA4, Meta Pixel, Snap Pixel etc.) devem
+   * ser registrados via window.MundoOctogono.onCookieConsentAccepted()
+   * em vez de rodar direto no <head> — assim só disparam com consentimento.
+   * ------------------------------------------------------------------ */
+  const COOKIE_CONSENT_KEY = "mo_cookie_consent";
+  const consentAcceptedCallbacks = [];
+
+  const getCookieConsent = () => {
+    try {
+      return localStorage.getItem(COOKIE_CONSENT_KEY);
+    } catch (e) {
+      return null;
+    }
+  };
+
+  const setCookieConsent = (value) => {
+    try {
+      localStorage.setItem(COOKIE_CONSENT_KEY, value);
+    } catch (e) {
+      /* localStorage indisponível (ex.: modo privado) — consentimento vale só para a sessão atual */
+    }
+    if (value === "accepted") {
+      consentAcceptedCallbacks.forEach((cb) => cb());
+    }
+  };
+
+  const cookieBanner = $(".cookie-banner");
+
+  const showCookieBanner = () => {
+    if (!cookieBanner) return;
+    cookieBanner.hidden = false;
+    requestAnimationFrame(() => cookieBanner.classList.add("is-visible"));
+  };
+
+  const hideCookieBanner = () => {
+    if (!cookieBanner) return;
+    cookieBanner.classList.remove("is-visible");
+    setTimeout(() => {
+      cookieBanner.hidden = true;
+    }, 400);
+  };
+
+  if (cookieBanner) {
+    if (!getCookieConsent()) {
+      showCookieBanner();
+    }
+
+    $("[data-cookie-accept]", cookieBanner)?.addEventListener("click", () => {
+      setCookieConsent("accepted");
+      hideCookieBanner();
+      showToast({
+        title: "Preferências salvas",
+        message: "Você aceitou todos os cookies. Pode alterar isso quando quiser no rodapé.",
+        type: "success",
+      });
+    });
+
+    $("[data-cookie-reject]", cookieBanner)?.addEventListener("click", () => {
+      setCookieConsent("rejected");
+      hideCookieBanner();
+      showToast({
+        title: "Preferências salvas",
+        message: "Apenas cookies essenciais serão usados.",
+        type: "info",
+      });
+    });
+  }
+
+  $$("[data-cookie-manage]").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      showCookieBanner();
+    });
+  });
+
+  window.MundoOctogono.onCookieConsentAccepted = (callback) => {
+    consentAcceptedCallbacks.push(callback);
+    if (getCookieConsent() === "accepted") callback();
+  };
+
+  /* ------------------------------------------------------------------
    * Formulário de newsletter
    * ------------------------------------------------------------------ */
   $$("[data-newsletter-form]").forEach((form) => {

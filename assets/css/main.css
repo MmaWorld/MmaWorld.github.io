@@ -107,6 +107,7 @@
   --z-overlay: 200;
   --z-modal: 300;
   --z-toast: 400;
+  --z-cookie: 450;
   --z-skiplink: 500;
 
   --header-height: 76px;
@@ -1886,6 +1887,27 @@ select:focus-visible,
   max-width: 60ch;
 }
 
+.verified-note {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--text-inverse-muted);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}
+
+.verified-note svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--color-red-400);
+}
+
 .article-header {
   max-width: 780px;
   margin-inline: auto;
@@ -2661,9 +2683,74 @@ select:focus-visible,
   .grid-cols-4 { gap: var(--space-4); }
 }
 
+/* --------------------------------------------------------------------------
+   25. COOKIE CONSENT BANNER
+   -------------------------------------------------------------------------- */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-cookie);
+  background: var(--color-black);
+  color: var(--text-inverse);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 -8px 24px rgba(10, 10, 11, 0.25);
+  transform: translateY(100%);
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.cookie-banner.is-visible {
+  transform: translateY(0);
+}
+
+.cookie-banner-inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-5) var(--container-pad);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.cookie-banner-text {
+  flex: 1;
+  min-width: 240px;
+  font-size: var(--fs-sm);
+  color: var(--text-inverse-muted);
+  margin: 0;
+}
+
+.cookie-banner-text a {
+  color: var(--color-white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+@media (max-width: 620px) {
+  .cookie-banner-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+  }
+  .cookie-banner-actions {
+    flex-direction: column-reverse;
+  }
+  .cookie-banner-actions .btn {
+    width: 100%;
+  }
+}
+
 /* Impressão — evita quebra estranha ao imprimir artigos */
 @media print {
-  .navbar, .topbar, .site-footer, .back-to-top, .toast-region, .newsletter, .sidebar {
+  .navbar, .topbar, .site-footer, .back-to-top, .toast-region, .newsletter, .sidebar, .cookie-banner {
     display: none !important;
   }
 }

@@ -72,86 +72,114 @@
   <!-- ====================================================================
        ÁREA DE MARKETING / MENSURAÇÃO — estrutura preparada, sem IDs.
        Descomente e insira o ID correspondente antes de publicar campanhas.
+
+       IMPORTANTE: todos os scripts abaixo estão embrulhados em
+       window.MundoOctogono.onCookieConsentAccepted(...) — só disparam
+       depois que o visitante aceita cookies no banner (assets/js/main.js).
+       Isso é necessário para conformidade com LGPD/UK GDPR e para não
+       coletar dados antes do consentimento. NÃO remova esse wrapper.
+
        Ver README.md → seção "Marketing e Mensuração" para instruções.
        ==================================================================== -->
 
   <!-- Google Tag Manager (inserir o mais alto possível no <head>)
   <script>
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-      var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : "";
-      j.async = true;
-      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, "script", "dataLayer", "GTM-XXXXXXX");
+    window.MundoOctogono = window.MundoOctogono || {};
+    window.MundoOctogono.onCookieConsentAccepted = window.MundoOctogono.onCookieConsentAccepted || function(cb){ document.addEventListener('DOMContentLoaded', cb); };
+    window.MundoOctogono.onCookieConsentAccepted(function () {
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-XXXXXXX");
+    });
   </script>
   -->
 
   <!-- Google Analytics 4 (gtag.js)
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag("js", new Date());
-    gtag("config", "G-XXXXXXXXXX");
+    window.MundoOctogono.onCookieConsentAccepted(function () {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX");
+    });
   </script>
   -->
 
   <!-- Meta Pixel (Facebook/Instagram Ads)
   <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-    document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'SEU_PIXEL_ID');
-    fbq('track', 'PageView');
+    window.MundoOctogono.onCookieConsentAccepted(function () {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'SEU_PIXEL_ID');
+      fbq('track', 'PageView');
+    });
   </script>
   -->
 
   <!-- Pinterest Tag
   <script>
-    !function(e){if(!window.pintrk){window.pintrk = function () {
-    window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
-    n=window.pintrk;n.queue=[],n.version="3.0";var
-    t=document.createElement("script");t.async=!0,t.src=e;var
-    r=document.getElementsByTagName("script")[0];
-    r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
-    pintrk('load', 'SEU_TAG_ID');
-    pintrk('page');
+    window.MundoOctogono.onCookieConsentAccepted(function () {
+      !function(e){if(!window.pintrk){window.pintrk = function () {
+      window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+      n=window.pintrk;n.queue=[],n.version="3.0";var
+      t=document.createElement("script");t.async=!0,t.src=e;var
+      r=document.getElementsByTagName("script")[0];
+      r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+      pintrk('load', 'SEU_TAG_ID');
+      pintrk('page');
+    });
   </script>
   -->
 
   <!-- Snap Pixel
   <script>
-    (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
-    {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
-    a.queue=[];var s='script';var r=t.createElement(s);r.async=!0;
-    r.src=n;var u=t.getElementsByTagName(s)[0];
-    u.parentNode.insertBefore(r,u);})(window,document,
-    'https://sc-static.net/scevent.min.js');
-    snaptr('init', 'SEU_PIXEL_ID');
-    snaptr('track', 'PAGE_VIEW');
+    window.MundoOctogono.onCookieConsentAccepted(function () {
+      (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
+      {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
+      a.queue=[];var s='script';var r=t.createElement(s);r.async=!0;
+      r.src=n;var u=t.getElementsByTagName(s)[0];
+      u.parentNode.insertBefore(r,u);})(window,document,
+      'https://sc-static.net/scevent.min.js');
+      snaptr('init', 'SEU_PIXEL_ID');
+      snaptr('track', 'PAGE_VIEW');
+    });
   </script>
   -->
 
   <!-- Microsoft Clarity
   <script>
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "SEU_CLARITY_ID");
+    window.MundoOctogono.onCookieConsentAccepted(function () {
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "SEU_CLARITY_ID");
+    });
   </script>
   -->
 
-  <!-- UTMify (captura e persistência de UTMs entre páginas/checkout)
+  <!-- UTMify (captura e persistência de UTMs entre páginas/checkout — não coleta dados pessoais, apenas parâmetros de campanha, pode ficar fora do gate se preferir)
   <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck async defer></script>
   -->
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) — inserir logo após a abertura do <body>
+  <!-- Google Tag Manager (noscript) — inserir logo após a abertura do <body>.
+       O <noscript><iframe> não pode ser condicionado a JS (é o fallback
+       justamente para quando JS está desabilitado), então mantenha comentado
+       enquanto o GTM acima estiver comentado; ative os dois juntos. -->
+  <!--
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   -->
@@ -851,6 +879,7 @@
           <a href="/pages/politica-de-privacidade.html">Política de Privacidade</a>
           <a href="/pages/termos-de-uso.html">Termos de Uso</a>
           <a href="/pages/politica-de-cookies.html">Política de Cookies</a>
+          <a href="#" data-cookie-manage>Gerenciar Cookies</a>
         </div>
       </nav>
     </div>
@@ -911,6 +940,16 @@
   <button type="button" class="back-to-top" aria-label="Voltar ao topo">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
   </button>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Consentimento de cookies" hidden>
+    <div class="cookie-banner-inner">
+      <p class="cookie-banner-text">Usamos cookies para melhorar sua experiência de navegação e medir o desempenho do conteúdo. Você pode aceitar todos os cookies ou manter apenas os essenciais ao funcionamento do site. Saiba mais na nossa <a href="/pages/politica-de-cookies.html">Política de Cookies</a>.</p>
+      <div class="cookie-banner-actions">
+        <button type="button" class="btn btn-outline btn-sm" data-cookie-reject>Apenas essenciais</button>
+        <button type="button" class="btn btn-accent btn-sm" data-cookie-accept>Aceitar todos</button>
+      </div>
+    </div>
+  </div>
 
   <script src="/assets/js/main.js" defer></script>
 </body>
