@@ -278,6 +278,28 @@
   };
 
   /* ------------------------------------------------------------------
+   * Taboola Pixel (advertiser id 2077769) — fires a page_view event on
+   * every page load, gated on cookie consent like the other trackers.
+   * ------------------------------------------------------------------ */
+  window.MundoOctogono.onCookieConsentAccepted(function () {
+    window._tfa = window._tfa || [];
+    window._tfa.push({ notify: "event", name: "page_view", id: 2077769 });
+    (function (t, f, a, x) {
+      if (!document.getElementById(x)) {
+        t.async = 1;
+        t.src = a;
+        t.id = x;
+        f.parentNode.insertBefore(t, f);
+      }
+    })(
+      document.createElement("script"),
+      document.getElementsByTagName("script")[0],
+      "//cdn.taboola.com/libtrc/unip/2077769/tfa.js",
+      "tb_tfa_script"
+    );
+  });
+
+  /* ------------------------------------------------------------------
    * Real form submission via FormSubmit (no backend of our own).
    * Uses FormSubmit's AJAX endpoint: it returns JSON instead of redirecting,
    * so the experience (toast) stays the same, but the email actually arrives.
