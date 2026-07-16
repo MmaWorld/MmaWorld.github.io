@@ -814,10 +814,14 @@
             <p class="newsletter-text">Resumo semanal com as principais notícias, resultados e análises de MMA direto na sua caixa de entrada. Sem spam.</p>
           </div>
           <div>
-            <form class="newsletter-form" data-newsletter-form novalidate>
+            <form class="newsletter-form" data-newsletter-form novalidate action="https://formsubmit.co/world.mma001@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="Nova inscrição na newsletter — Mundo do Octógono" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="form_type" value="newsletter" />
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
               <div class="form-field">
                 <label for="newsletterEmail" class="sr-only">Seu e-mail</label>
-                <input type="email" id="newsletterEmail" class="input" placeholder="seuemail@exemplo.com" required autocomplete="email" />
+                <input type="email" id="newsletterEmail" name="email" class="input" placeholder="seuemail@exemplo.com" required autocomplete="email" />
               </div>
               <button type="submit" class="btn btn-accent">Inscrever-se</button>
             </form>

@@ -278,10 +278,37 @@
   };
 
   /* ------------------------------------------------------------------
+   * Envio real de formulários via FormSubmit (sem backend próprio).
+   * Usa o endpoint AJAX do FormSubmit: retorna JSON em vez de redirecionar,
+   * então a experiência (toast) continua igual, mas o e-mail chega de verdade.
+   * ------------------------------------------------------------------ */
+  const submitFormReally = async (form) => {
+    const action = form.getAttribute("action");
+    if (!action) return { ok: false, reason: "no-action" };
+
+    const ajaxUrl = action.replace(
+      /^https:\/\/formsubmit\.co\//,
+      "https://formsubmit.co/ajax/"
+    );
+
+    try {
+      const response = await fetch(ajaxUrl, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+      if (!response.ok) return { ok: false, reason: "http-error" };
+      return { ok: true };
+    } catch (err) {
+      return { ok: false, reason: "network-error" };
+    }
+  };
+
+  /* ------------------------------------------------------------------
    * Formulário de newsletter
    * ------------------------------------------------------------------ */
   $$("[data-newsletter-form]").forEach((form) => {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const emailInput = $('input[type="email"]', form);
       const value = emailInput?.value.trim() || "";
@@ -299,21 +326,35 @@
       }
 
       emailInput?.removeAttribute("aria-invalid");
-      showToast({
-        title: "Inscrição confirmada",
-        message: "Você receberá nossas próximas atualizações sobre o MMA.",
-        type: "success",
-      });
-      form.reset();
+      const submitBtn = $('button[type="submit"]', form);
+      submitBtn?.setAttribute("disabled", "true");
+
+      const result = await submitFormReally(form);
+      submitBtn?.removeAttribute("disabled");
+
+      if (result.ok) {
+        showToast({
+          title: "Inscrição confirmada",
+          message: "Você receberá nossas próximas atualizações sobre o MMA.",
+          type: "success",
+        });
+        form.reset();
+      } else {
+        showToast({
+          title: "Não foi possível enviar agora",
+          message: "Tente novamente em instantes ou escreva para world.mma001@gmail.com.",
+          type: "info",
+        });
+      }
     });
   });
 
   /* ------------------------------------------------------------------
-   * Formulário de contato (validação client-side, sem envio real)
+   * Formulário de contato — envio real via FormSubmit
    * ------------------------------------------------------------------ */
   const contactForm = $("[data-contact-form]");
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
+    contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const requiredFields = $$("[required]", contactForm);
       let valid = true;
@@ -331,6 +372,21 @@
         showToast({
           title: "Campos obrigatórios",
           message: "Preencha todos os campos destacados antes de enviar.",
+          type: "info",
+        });
+        return;
+      }
+
+      const submitBtn = $('button[type="submit"]', contactForm);
+      submitBtn?.setAttribute("disabled", "true");
+
+      const result = await submitFormReally(contactForm);
+      submitBtn?.removeAttribute("disabled");
+
+      if (!result.ok) {
+        showToast({
+          title: "Não foi possível enviar agora",
+          message: "Tente novamente em instantes ou escreva direto para world.mma001@gmail.com.",
           type: "info",
         });
         return;

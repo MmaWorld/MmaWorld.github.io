@@ -98,7 +98,11 @@
         <div class="contact-grid">
           <div>
             <h2 class="section-title" style="margin-bottom:var(--space-6);">Envie uma mensagem</h2>
-            <form class="form-light" data-contact-form novalidate>
+            <form class="form-light" data-contact-form novalidate action="https://formsubmit.co/world.mma001@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="Nova mensagem — Mundo do Octógono" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
               <div class="form-row">
                 <div class="form-group" style="margin-bottom:0;">
                   <label for="contactName">Nome</label>
