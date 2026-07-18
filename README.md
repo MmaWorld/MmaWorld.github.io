@@ -45,7 +45,6 @@ mundo-do-octogono/
     ├── eventos.html
     ├── resultados.html
     ├── rankings.html                 # Peso por peso + 8 categorias masc. + 4 fem.
-    ├── videos.html
     ├── sobre.html
     ├── contato.html
     ├── politica-de-privacidade.html

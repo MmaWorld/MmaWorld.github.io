@@ -515,16 +515,4 @@
       target.hidden = false;
     }, 500);
   });
-
-  /* ------------------------------------------------------------------
-   * Video player in modal (accessible placeholder)
-   * ------------------------------------------------------------------ */
-  $$("[data-video-trigger]").forEach((trigger) => {
-    trigger.addEventListener("click", () => {
-      const modal = document.getElementById("videoModal");
-      const titleEl = $("[data-video-title]", modal);
-      if (titleEl) titleEl.textContent = trigger.dataset.videoTrigger;
-      openModal(modal);
-    });
-  });
 })();

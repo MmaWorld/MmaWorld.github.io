@@ -31,11 +31,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mmaworld.github.io/pages/videos.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://mmaworld.github.io/pages/sobre.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
