@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Bíblico Infantil — Mundo Bíblico Kids</title>
+  <meta name="description" content="Quiz bíblico para crianças com perguntas valendo pontos, três níveis de dificuldade e modo para jogar em dupla.">
+  <link rel="canonical" href="https://mmaworld.github.io/pages/quiz.html">
+  <meta name="theme-color" content="#ff7a59">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Mundo Bíblico Kids">
+  <meta property="og:title" content="Quiz Bíblico Infantil — Mundo Bíblico Kids">
+  <meta property="og:description" content="Quiz bíblico para crianças com perguntas valendo pontos, três níveis de dificuldade e modo para jogar em dupla.">
+  <meta property="og:url" content="https://mmaworld.github.io/pages/quiz.html">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo">
+    <div class="container">
+      <a class="logo" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#ff7a59"/><path d="M8 20 Q20 14 32 20 Q44 14 56 20 L56 50 Q44 44 32 50 Q20 44 8 50 Z" fill="#fff" stroke="#2d2a32" stroke-width="3" stroke-linejoin="round"/><path d="M32 20 L32 50" stroke="#2d2a32" stroke-width="3"/><path d="M32 40 C24 34 22 28 26 25 C29 23 31 25 32 27 C33 25 35 23 38 25 C42 28 40 34 32 40 Z" fill="#ff6b9d" stroke="#2d2a32" stroke-width="2.5" stroke-linejoin="round"/></svg><span>Mundo Bíblico Kids<small>Aprender a Bíblia brincando</small></span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">☰</button>
+      <nav class="menu" id="menu" aria-label="Menu principal">
+        <a href="../index.html">🏠 Início</a>
+        <a href="colorir.html">🖍️ Colorir</a>
+        <a href="historias.html">📖 Histórias</a>
+        <a href="quiz.html" aria-current="page">❓ Quiz</a>
+        <a href="pais.html">👨‍👩‍👧 Pais</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="secao">
+      <div class="container">
+        <div class="secao-titulo">
+          <h1>❓ Quiz bíblico</h1>
+          <p>Responda rápido para ganhar pontos de bônus!</p>
+        </div>
+
+        <div class="quiz-caixa" id="tela-inicio">
+          <h2>1. Escolha o nível</h2>
+          <div class="niveis">
+            <button class="nivel" type="button" data-nivel="facil" aria-pressed="true"><span class="icone">🐑</span><strong>Fácil</strong><small>10 pontos por acerto</small></button>
+            <button class="nivel" type="button" data-nivel="medio" aria-pressed="false"><span class="icone">🦁</span><strong>Médio</strong><small>20 pontos por acerto</small></button>
+            <button class="nivel" type="button" data-nivel="dificil" aria-pressed="false"><span class="icone">🐋</span><strong>Difícil</strong><small>30 pontos por acerto</small></button>
+          </div>
+          <h2>2. Quem vai jogar?</h2>
+          <div class="jogadores">
+            <label for="nome-1">Nome:</label>
+            <input id="nome-1" type="text" maxlength="20" placeholder="Jogador 1" autocomplete="off">
+          </div>
+          <div class="jogadores">
+            <label><input type="checkbox" id="modo-2"> Jogar em dupla (um de cada vez)</label>
+          </div>
+          <div class="jogadores oculto" id="nome-2-caixa">
+            <label for="nome-2">Nome:</label>
+            <input id="nome-2" type="text" maxlength="20" placeholder="Jogador 2" autocomplete="off">
+          </div>
+          <div class="placar" style="margin-top:20px">
+            <button class="btn verde" type="button" id="btn-comecar">⭐ Começar!</button>
+            <button class="btn claro pequeno" type="button" id="btn-som">🔊 Som ligado</button>
+          </div>
+          <p class="recorde" id="recordes"></p>
+        </div>
+
+        <div class="quiz-caixa oculto" id="tela-jogo">
+          <div class="placar" id="placar"></div>
+          <div class="placar"><span>⏱️ <span id="tempo-txt"></span></span><button class="btn claro pequeno" type="button" id="btn-sair">Sair</button></div>
+          <div class="tempo" aria-hidden="true"><i id="barra-tempo"></i></div>
+          <h2 class="pergunta" id="pergunta" tabindex="-1"></h2>
+          <div class="opcoes" id="opcoes"></div>
+          <div class="feedback" id="feedback" aria-live="polite"></div>
+          <div style="margin-top:16px;text-align:right"><button class="btn azul oculto" type="button" id="btn-proxima">Próxima pergunta ➜</button></div>
+        </div>
+
+        <div class="quiz-caixa resultado oculto" id="tela-fim">
+          <div id="resultado"></div>
+          <div class="placar" style="justify-content:center">
+            <button class="btn verde" type="button" id="btn-denovo">🔁 Jogar de novo</button>
+            <button class="btn claro" type="button" id="btn-menu">Trocar nível</button>
+            <a class="btn azul" href="historias.html">📖 Ver histórias</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>© <span id="ano">2026</span> Mundo Bíblico Kids · Feito com 💛 para as crianças e suas famílias.</p>
+      <nav aria-label="Links do rodapé">
+        <a href="colorir.html">Colorir</a>
+        <a href="historias.html">Histórias</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="pais.html">Para pais e privacidade</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+</body>
+</html>

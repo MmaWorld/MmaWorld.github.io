@@ -1,868 +1,133 @@
-<!DOCTYPE html>
-<html lang="en-GB">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>World MMA — MMA News, Events and Rankings</title>
-  <meta name="description" content="Independent MMA news portal: coverage, analysis, events, results and rankings from the UFC, Bellator, PFL, ONE Championship and more. No official affiliation." />
-  <link rel="canonical" href="https://mmaworld.github.io/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="World MMA" />
-  <meta property="og:title" content="World MMA — MMA News, Events and Rankings" />
-  <meta property="og:description" content="Independent MMA news portal: coverage, analysis, events, results and rankings. No official affiliation with any fighting organisation." />
-  <meta property="og:url" content="https://mmaworld.github.io/" />
-  <meta property="og:image" content="https://mmaworld.github.io/assets/images/hero-mma-cage.jpg" />
-  <meta property="og:locale" content="en_GB" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="World MMA — MMA News, Events and Rankings" />
-  <meta name="twitter:description" content="Independent MMA news portal. Coverage, analysis, events, results and rankings." />
-  <meta name="twitter:image" content="https://mmaworld.github.io/assets/images/hero-mma-cage.jpg" />
-
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0a0a0b" />
-  <link rel="manifest" href="/manifest.json" />
-  <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
-  <link rel="alternate" type="application/rss+xml" title="World MMA — RSS" href="/rss.xml" />
-
-  <!-- Performance: preconnect / preload -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
-  <link rel="preload" as="image" href="/assets/icons/logo.svg" />
-  <link rel="stylesheet" href="/assets/css/main.css" />
-
-  <!-- JSON-LD: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "World MMA",
-    "url": "https://mmaworld.github.io/",
-    "logo": "https://mmaworld.github.io/assets/icons/favicon.svg",
-    "sameAs": [
-      "https://www.instagram.com/",
-      "https://www.youtube.com/",
-      "https://www.tiktok.com/"
-    ],
-    "description": "Independent journalistic portal dedicated to MMA news, analysis and statistics. Not officially affiliated with the UFC, PFL, ONE Championship, Bellator or any other organisation."
-  }
-  </script>
-
-  <!-- JSON-LD: WebSite + SearchAction -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "World MMA",
-    "url": "https://mmaworld.github.io/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://mmaworld.github.io/pages/categoria.html?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-
-  <!-- ====================================================================
-       MARKETING / MEASUREMENT AREA — structure prepared, no IDs.
-       Uncomment and insert the corresponding ID before publishing campaigns.
-
-       IMPORTANT: all scripts below are wrapped in
-       window.MundoOctogono.onCookieConsentAccepted(...) — they only fire
-       after the visitor accepts cookies in the banner (assets/js/main.js).
-       This is required for UK GDPR compliance and to avoid collecting
-       data before consent. DO NOT remove this wrapper.
-
-       See README.md → "Marketing e Mensuração" section for instructions.
-       ==================================================================== -->
-
-  <!-- Google Tag Manager (insert as high as possible in <head>)
-  <script>
-    window.MundoOctogono = window.MundoOctogono || {};
-    window.MundoOctogono.onCookieConsentAccepted = window.MundoOctogono.onCookieConsentAccepted || function(cb){ document.addEventListener('DOMContentLoaded', cb); };
-    window.MundoOctogono.onCookieConsentAccepted(function () {
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-XXXXXXX");
-    });
-  </script>
-  -->
-
-  <!-- Google Analytics 4 (gtag.js)
-  <script>
-    window.MundoOctogono.onCookieConsentAccepted(function () {
-      var s = document.createElement("script");
-      s.async = true;
-      s.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
-      document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-XXXXXXXXXX");
-    });
-  </script>
-  -->
-
-  <!-- Meta Pixel (Facebook/Instagram Ads)
-  <script>
-    window.MundoOctogono.onCookieConsentAccepted(function () {
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-      document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'YOUR_PIXEL_ID');
-      fbq('track', 'PageView');
-    });
-  </script>
-  -->
-
-  <!-- Pinterest Tag
-  <script>
-    window.MundoOctogono.onCookieConsentAccepted(function () {
-      !function(e){if(!window.pintrk){window.pintrk = function () {
-      window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
-      n=window.pintrk;n.queue=[],n.version="3.0";var
-      t=document.createElement("script");t.async=!0,t.src=e;var
-      r=document.getElementsByTagName("script")[0];
-      r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
-      pintrk('load', 'YOUR_TAG_ID');
-      pintrk('page');
-    });
-  </script>
-  -->
-
-  <!-- Snap Pixel
-  <script>
-    window.MundoOctogono.onCookieConsentAccepted(function () {
-      (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
-      {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
-      a.queue=[];var s='script';var r=t.createElement(s);r.async=!0;
-      r.src=n;var u=t.getElementsByTagName(s)[0];
-      u.parentNode.insertBefore(r,u);})(window,document,
-      'https://sc-static.net/scevent.min.js');
-      snaptr('init', 'YOUR_PIXEL_ID');
-      snaptr('track', 'PAGE_VIEW');
-    });
-  </script>
-  -->
-
-  <!-- Microsoft Clarity
-  <script>
-    window.MundoOctogono.onCookieConsentAccepted(function () {
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "YOUR_CLARITY_ID");
-    });
-  </script>
-  -->
-
-  <!-- UTMify (captures and persists UTMs across pages/checkout — does not collect personal data, only campaign parameters, can stay outside the gate if preferred)
-  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck async defer></script>
-  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mundo Bíblico Kids — Desenhos, histórias e quiz bíblico para crianças</title>
+  <meta name="description" content="Desenhos bíblicos para colorir, histórias da Bíblia animadas e narradas para crianças e um quiz bíblico valendo pontos. Grátis e sem anúncios.">
+  <link rel="canonical" href="https://mmaworld.github.io/">
+  <meta name="theme-color" content="#ff7a59">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Mundo Bíblico Kids">
+  <meta property="og:title" content="Mundo Bíblico Kids — Desenhos, histórias e quiz bíblico para crianças">
+  <meta property="og:description" content="Desenhos bíblicos para colorir, histórias da Bíblia animadas e narradas para crianças e um quiz bíblico valendo pontos. Grátis e sem anúncios.">
+  <meta property="og:url" content="https://mmaworld.github.io/">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) — insert right after the opening <body> tag.
-       The <noscript><iframe> cannot be gated by JS (it is precisely the
-       fallback for when JS is disabled), so keep it commented out
-       while the GTM script above is commented out; enable both together. -->
-  <!--
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  -->
-  <a href="#conteudo-principal" class="skip-link">Skip to content</a>
-
-  <!-- =================== HEADER =================== -->
-  <header>
-    <div class="topbar">
-      <div class="container topbar-inner">
-        <span class="topbar-date" data-current-date>Independent MMA news portal</span>
-        <nav class="topbar-links" aria-label="Institutional links">
-          <a href="/pages/sobre.html">About</a>
-          <a href="/pages/contato.html">Contact</a>
-        </nav>
-      </div>
-    </div>
-
-    <div class="navbar">
-      <div class="container navbar-inner">
-        <a href="/" class="brand" aria-label="World MMA — homepage">
-          <img src="/assets/icons/logo.svg" alt="" class="brand-logo" width="40" height="40" />
-          <span class="brand-name">World<br />MMA<span>MMA News</span></span>
-        </a>
-
-        <nav id="nav-primary" class="nav-primary" aria-label="Main navigation">
-          <div class="nav-item">
-            <a href="/" class="nav-link" aria-current="page">Home</a>
-          </div>
-
-          <div class="nav-item">
-            <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
-              News
-              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="mega-menu" role="menu">
-              <span class="mega-menu-title">Organisations</span>
-              <a href="/pages/categoria.html?cat=ufc" role="menuitem">UFC</a>
-              <a href="/pages/categoria.html?cat=bellator" role="menuitem">Bellator / PFL</a>
-              <a href="/pages/categoria.html?cat=pfl" role="menuitem">PFL</a>
-              <a href="/pages/categoria.html?cat=one" role="menuitem">ONE Championship</a>
-              <a href="/pages/categoria.html?cat=boxe" role="menuitem">Boxing</a>
-              <a href="/pages/categoria.html?cat=jiujitsu" role="menuitem">Jiu-Jitsu</a>
-              <a href="/pages/categoria.html?cat=entrevistas" role="menuitem">Interviews</a>
-              <a href="/pages/categoria.html?cat=opiniao" role="menuitem">Opinion &amp; Analysis</a>
-              <a href="/pages/categoria.html?cat=feminino" role="menuitem">Women's MMA</a>
-            </div>
-          </div>
-
-          <div class="nav-item">
-            <a href="/pages/eventos.html" class="nav-link">Events</a>
-          </div>
-          <div class="nav-item">
-            <a href="/pages/resultados.html" class="nav-link">Results</a>
-          </div>
-          <div class="nav-item">
-            <a href="/pages/rankings.html" class="nav-link">Rankings</a>
-          </div>
-          <div class="nav-item hide-desktop">
-            <a href="/pages/sobre.html" class="nav-link">About</a>
-          </div>
-          <div class="nav-item hide-desktop">
-            <a href="/pages/contato.html" class="nav-link">Contact</a>
-          </div>
-        </nav>
-
-        <div class="nav-actions">
-          <button type="button" class="icon-btn" data-open-modal="searchModal" aria-label="Open search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-          </button>
-          <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-primary">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo">
+    <div class="container">
+      <a class="logo" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#ff7a59"/><path d="M8 20 Q20 14 32 20 Q44 14 56 20 L56 50 Q44 44 32 50 Q20 44 8 50 Z" fill="#fff" stroke="#2d2a32" stroke-width="3" stroke-linejoin="round"/><path d="M32 20 L32 50" stroke="#2d2a32" stroke-width="3"/><path d="M32 40 C24 34 22 28 26 25 C29 23 31 25 32 27 C33 25 35 23 38 25 C42 28 40 34 32 40 Z" fill="#ff6b9d" stroke="#2d2a32" stroke-width="2.5" stroke-linejoin="round"/></svg><span>Mundo Bíblico Kids<small>Aprender a Bíblia brincando</small></span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">☰</button>
+      <nav class="menu" id="menu" aria-label="Menu principal">
+        <a href="index.html" aria-current="page">🏠 Início</a>
+        <a href="pages/colorir.html">🖍️ Colorir</a>
+        <a href="pages/historias.html">📖 Histórias</a>
+        <a href="pages/quiz.html">❓ Quiz</a>
+        <a href="pages/pais.html">👨‍👩‍👧 Pais</a>
+      </nav>
     </div>
   </header>
 
-  <main id="conteudo-principal">
-    <!-- =================== HERO =================== -->
-    <section class="hero" aria-label="Highlights">
-      <div class="container hero-grid">
-        <article class="hero-main">
-          <div class="media-frame ratio-16-9 tone-red">
-            <img src="/assets/images/hero-mma-cage.jpg" alt="Focused fighter standing alone inside the cage arena" loading="eager" width="1600" height="1067" />
+  <main id="conteudo">
+    <section class="hero">
+      <div class="container">
+        <div>
+          <h1>Aprender a Bíblia é uma grande aventura! 🌈</h1>
+          <p class="lead">Desenhos para colorir, histórias bíblicas animadas e narradas, e um quiz cheio de perguntas valendo pontos. Tudo gratuito, feito para crianças e famílias.</p>
+          <div class="acoes">
+            <a class="btn" href="pages/historias.html">▶ Ver histórias</a>
+            <a class="btn azul" href="pages/colorir.html">🖍️ Colorir</a>
+            <a class="btn verde" href="pages/quiz.html">⭐ Jogar o quiz</a>
           </div>
-          <div class="hero-content">
-            <span class="badge badge-accent">UFC 329</span>
-            <h1 class="hero-title">
-              <a href="/pages/noticia.html">Max Holloway beats Conor McGregor in 69 seconds at UFC 329</a>
-            </h1>
-            <p class="hero-excerpt">McGregor suffered a knee injury attempting a jumping kick at the start of the bout, and Holloway won by technical knockout in the very first round at T-Mobile Arena in Las Vegas.</p>
-            <div class="hero-meta">
-              <span>By Rafael Nogueira</span>
-              <span aria-hidden="true">•</span>
-              <span>Updated 14 July</span>
-              <span aria-hidden="true">•</span>
-              <span>5 min read</span>
-            </div>
-          </div>
-        </article>
-
-        <aside class="hero-side" aria-label="More top stories">
-          <div class="hero-side-card">
-            <span class="hero-side-number">02</span>
-            <div>
-              <span class="hero-side-cat">UFC</span>
-              <h2 class="hero-side-title"><a href="/pages/rankings.html">UFC launches Meta UFC Rankings, an Elo-based system</a></h2>
-            </div>
-          </div>
-          <div class="hero-side-card">
-            <span class="hero-side-number">03</span>
-            <div>
-              <span class="hero-side-cat">UFC</span>
-              <h2 class="hero-side-title"><a href="/pages/eventos.html">Du Plessis vs Usman: former champions collide in Oklahoma City</a></h2>
-            </div>
-          </div>
-          <div class="hero-side-card">
-            <span class="hero-side-number">04</span>
-            <div>
-              <span class="hero-side-cat">UFC</span>
-              <h2 class="hero-side-title"><a href="/pages/eventos.html">Ankalaev loses opponent to injury, faces Guskov in Abu Dhabi</a></h2>
-            </div>
-          </div>
-          <div class="hero-side-card">
-            <span class="hero-side-number">05</span>
-            <div>
-              <span class="hero-side-cat">Bellator / PFL</span>
-              <h2 class="hero-side-title"><a href="/pages/categoria.html?cat=bellator">Bellator brand discontinued as events move under the PFL banner</a></h2>
-            </div>
-          </div>
-        </aside>
+        </div>
+        <div class="arte" data-desenho="arca" aria-hidden="true"></div>
       </div>
     </section>
 
-    <!-- =================== NEWS GRID + SIDEBAR =================== -->
-    <section class="section">
+    <section class="secao">
       <div class="container">
-        <div class="layout-with-sidebar">
-          <div>
-            <div class="section-head">
-              <div>
-                <span class="section-eyebrow">Latest news</span>
-                <h2 class="section-title">Fresh from the coverage</h2>
-              </div>
-              <a href="/pages/categoria.html" class="section-link">
-                See all
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-
-            <div class="grid grid-cols-3">
-              <article class="card" data-category="jiujitsu">
-                <div class="card-media">
-                  <span class="badge badge-dark">Jiu-Jitsu</span>
-                  <div class="media-frame ratio-16-9">
-                    <img src="/assets/images/jiujitsu-grappling-1.jpg" alt="Athletes fighting for position during a Jiu-Jitsu match" loading="lazy" width="800" height="450" />
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title"><a href="/pages/noticia.html">5 submissions that impressed Jiu-Jitsu fans the most this year</a></h3>
-                  <p class="card-excerpt">Revisit the technical highlights that went viral among practitioners and pundits of the sport.</p>
-                  <div class="card-meta">
-                    <span>Jiu-Jitsu</span><span class="dot"></span><span>5 min</span><span class="dot"></span><span>Today</span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="card" data-category="one">
-                <div class="card-media">
-                  <span class="badge badge-dark">ONE Championship</span>
-                  <div class="media-frame ratio-16-9 tone-red">
-                    <img src="/assets/images/martial-arts-action.jpg" alt="Athlete practising martial arts outdoors" loading="lazy" width="800" height="450" />
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title"><a href="/pages/categoria.html?cat=one">ONE Championship set for a record 72 events in 2026</a></h3>
-                  <p class="card-excerpt">The calendar includes a dozen ONE Fight Night cards on Prime Video and around 50 ONE Friday Fights events across Asia.</p>
-                  <div class="card-meta">
-                    <span>ONE</span><span class="dot"></span><span>4 min</span><span class="dot"></span><span>Today</span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="card" data-category="boxe">
-                <div class="card-media">
-                  <span class="badge badge-dark">Boxing</span>
-                  <div class="media-frame ratio-16-9">
-                    <img src="/assets/images/boxing-sparring-gym.jpg" alt="Fighters training boxing in a gym" loading="lazy" width="800" height="450" />
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title"><a href="/pages/noticia.html">Boxing vs MMA: understanding the key technical differences</a></h3>
-                  <p class="card-excerpt">A comparative guide to stance, distance and strategy across the two combat disciplines.</p>
-                  <div class="card-meta">
-                    <span>Boxing</span><span class="dot"></span><span>7 min</span><span class="dot"></span><span>Yesterday</span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="card" data-category="ufc">
-                <div class="card-media">
-                  <span class="badge badge-dark">UFC</span>
-                  <div class="media-frame ratio-16-9 tone-red">
-                    <img src="/assets/images/mma-wrestling-ring.jpg" alt="Fighter shadow boxing alone inside a training ring" loading="lazy" width="800" height="450" />
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title"><a href="/pages/eventos.html">UFC 330 to feature a double title fight in August</a></h3>
-                  <p class="card-excerpt">Islam Makhachev defends his welterweight title against Ian Machado Garry, and Mackenzie Dern takes on Gillian Robertson for the strawweight belt.</p>
-                  <div class="card-meta">
-                    <span>UFC</span><span class="dot"></span><span>6 min</span><span class="dot"></span><span>Yesterday</span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="card" data-category="opiniao">
-                <div class="card-media">
-                  <span class="badge badge-dark">Opinion</span>
-                  <div class="media-frame ratio-16-9">
-                    <img src="/assets/images/mma-gloves-action.jpg" alt="Boxer practising shadow boxing technique outdoors" loading="lazy" width="800" height="450" />
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title"><a href="/pages/rankings.html">Understanding the Meta UFC Rankings, the new ranking system</a></h3>
-                  <p class="card-excerpt">The Elo-based model replaces the media voting panel and factors in opponent quality, activity and the decay of older results.</p>
-                  <div class="card-meta">
-                    <span>Opinion</span><span class="dot"></span><span>8 min</span><span class="dot"></span><span>2 days</span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="card" data-category="bellator">
-                <div class="card-media">
-                  <span class="badge badge-dark">Bellator / PFL</span>
-                  <div class="media-frame ratio-16-9 tone-red">
-                    <img src="/assets/images/boxing-glove-red.jpg" alt="Close-up of a fight glove during training" loading="lazy" width="800" height="450" />
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title"><a href="/pages/categoria.html?cat=bellator">PFL announces single-elimination format and $20 million prize</a></h3>
-                  <p class="card-excerpt">The 2026 season adopts a single-elimination bracket, with the champion crowned in December. The Bellator brand has been discontinued and folded into the PFL.</p>
-                  <div class="card-meta">
-                    <span>Bellator / PFL</span><span class="dot"></span><span>5 min</span><span class="dot"></span><span>2 days</span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <nav class="pagination" aria-label="News pagination">
-              <button class="page-btn" disabled aria-label="Previous page">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M15 6l-6 6 6 6"/></svg>
-              </button>
-              <button class="page-btn" aria-current="page">1</button>
-              <a class="page-btn" href="/pages/categoria.html">2</a>
-              <a class="page-btn" href="/pages/categoria.html">3</a>
-              <a class="page-btn" href="/pages/categoria.html" aria-label="Next page">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M9 6l6 6-6 6"/></svg>
-              </a>
-            </nav>
-          </div>
-
-          <!-- =================== SIDEBAR =================== -->
-          <aside class="sidebar" aria-label="Related content">
-            <div class="widget">
-              <h2 class="widget-title">Most read</h2>
-              <ol class="widget-list">
-                <li class="widget-item">
-                  <span class="widget-rank">01</span>
-                  <div>
-                    <h3 class="widget-item-title"><a href="/pages/noticia.html">Holloway beats McGregor in 69 seconds at UFC 329</a></h3>
-                    <span class="widget-item-meta">UFC · 12k reads</span>
-                  </div>
-                </li>
-                <li class="widget-item">
-                  <span class="widget-rank">02</span>
-                  <div>
-                    <h3 class="widget-item-title"><a href="/pages/rankings.html">Meta UFC Rankings: how the new system works</a></h3>
-                    <span class="widget-item-meta">Opinion · 9.4k reads</span>
-                  </div>
-                </li>
-                <li class="widget-item">
-                  <span class="widget-rank">03</span>
-                  <div>
-                    <h3 class="widget-item-title"><a href="/pages/eventos.html">Du Plessis vs Usman: full Oklahoma City card</a></h3>
-                    <span class="widget-item-meta">UFC · 8.1k reads</span>
-                  </div>
-                </li>
-                <li class="widget-item">
-                  <span class="widget-rank">04</span>
-                  <div>
-                    <h3 class="widget-item-title"><a href="/pages/categoria.html?cat=bellator">PFL announces single-elimination format for 2026</a></h3>
-                    <span class="widget-item-meta">PFL · 7.6k reads</span>
-                  </div>
-                </li>
-              </ol>
-            </div>
-
-            <div class="widget">
-              <h2 class="widget-title">Categories</h2>
-              <div class="widget-tags">
-                <a class="tag-pill" href="/pages/categoria.html?cat=ufc">UFC</a>
-                <a class="tag-pill" href="/pages/categoria.html?cat=bellator">Bellator / PFL</a>
-                <a class="tag-pill" href="/pages/categoria.html?cat=pfl">PFL</a>
-                <a class="tag-pill" href="/pages/categoria.html?cat=one">ONE Championship</a>
-                <a class="tag-pill" href="/pages/categoria.html?cat=boxe">Boxing</a>
-                <a class="tag-pill" href="/pages/categoria.html?cat=jiujitsu">Jiu-Jitsu</a>
-                <a class="tag-pill" href="/pages/categoria.html?cat=feminino">Women's MMA</a>
-                <a class="tag-pill" href="/pages/categoria.html?cat=opiniao">Opinion</a>
-              </div>
-            </div>
-
-            <div class="widget widget-cta">
-              <h2 class="widget-title">Next event</h2>
-              <p>Check out the full card, start times and where to watch the next major MMA event.</p>
-              <a href="/pages/eventos.html" class="btn btn-accent btn-block">See full schedule</a>
-            </div>
-          </aside>
+        <div class="secao-titulo">
+          <h2>O que vamos fazer hoje?</h2>
+          <p>Escolha uma atividade e divirta-se!</p>
         </div>
-      </div>
-    </section>
-
-    <!-- =================== FEATURED CATEGORIES =================== -->
-    <section class="section section--tight" style="background:var(--bg-subtle);" aria-label="Categories">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="section-eyebrow">Explore by organisation</span>
-            <h2 class="section-title">Categories</h2>
-          </div>
-        </div>
-        <div class="grid grid-cols-4">
-          <a class="card" href="/pages/categoria.html?cat=ufc" style="text-decoration:none;">
-            <div class="card-media">
-              <div class="media-frame ratio-4-3 tone-red">
-                <img src="/assets/images/mma-wrestling-ring.jpg" alt="Fighter shadow boxing alone inside a training ring" loading="lazy" width="600" height="450" />
-              </div>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">UFC</h3>
-              <p class="card-excerpt">News, fight cards and behind-the-scenes from the biggest organisation on the circuit.</p>
-            </div>
+        <div class="cards-3">
+          <a class="card-grande" href="pages/colorir.html" style="--c: var(--blue)">
+            <div class="icone">🖍️</div>
+            <h3>Desenhos para colorir</h3>
+            <p>Pinte na tela com um toque ou imprima para colorir no papel. Seus desenhos ficam salvos!</p>
           </a>
-          <a class="card" href="/pages/categoria.html?cat=pfl" style="text-decoration:none;">
-            <div class="card-media">
-              <div class="media-frame ratio-4-3">
-                <img src="/assets/images/mma-gloves-action.jpg" alt="Boxer practising shadow boxing technique outdoors" loading="lazy" width="600" height="450" />
-              </div>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">PFL</h3>
-              <p class="card-excerpt">Season format and playoffs explained round by round.</p>
-            </div>
+          <a class="card-grande" href="pages/historias.html" style="--c: var(--primary)">
+            <div class="icone">📖</div>
+            <h3>Histórias animadas</h3>
+            <p>Noé, Davi, Daniel, Jonas, o nascimento de Jesus e muito mais — contadas de um jeito infantil, com narração.</p>
           </a>
-          <a class="card" href="/pages/categoria.html?cat=one" style="text-decoration:none;">
-            <div class="card-media">
-              <div class="media-frame ratio-4-3 tone-red">
-                <img src="/assets/images/martial-arts-action.jpg" alt="Athlete practising martial arts outdoors" loading="lazy" width="600" height="450" />
-              </div>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">ONE Championship</h3>
-              <p class="card-excerpt">Coverage of the Asian circuit and its global expansion.</p>
-            </div>
-          </a>
-          <a class="card" href="/pages/categoria.html?cat=jiujitsu" style="text-decoration:none;">
-            <div class="card-media">
-              <div class="media-frame ratio-4-3">
-                <img src="/assets/images/jiujitsu-grappling-1.jpg" alt="Athletes fighting for position during a Jiu-Jitsu match" loading="lazy" width="600" height="450" />
-              </div>
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">Jiu-Jitsu</h3>
-              <p class="card-excerpt">Technique, black belts and the grappling foundations of MMA.</p>
-            </div>
+          <a class="card-grande" href="pages/quiz.html" style="--c: var(--green)">
+            <div class="icone">❓</div>
+            <h3>Quiz bíblico</h3>
+            <p>Responda perguntas, ganhe pontos e estrelas. Dá para jogar sozinho ou em dupla com a família!</p>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- =================== UPCOMING EVENTS =================== -->
-    <section class="section" aria-label="Upcoming events">
+    <section class="secao">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="section-eyebrow">Schedule</span>
-            <h2 class="section-title">Upcoming events</h2>
-          </div>
-          <a href="/pages/eventos.html" class="section-link">
-            Full calendar
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-
-        <div style="display:flex; flex-direction:column; gap:var(--space-4);">
-          <div class="event-card">
-            <div class="event-date-block">
-              <span class="day">18</span>
-              <span class="month">July</span>
-            </div>
-            <div class="event-info">
-              <span class="badge badge-outline">UFC</span>
-              <h3 class="event-name">UFC Fight Night: du Plessis vs Usman</h3>
-              <span class="event-location">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                Paycom Center, Oklahoma City (USA)
-              </span>
-              <p class="event-main-fight">Dricus Du Plessis <span>vs</span> Kamaru Usman</p>
-            </div>
-            <div class="event-cta">
-              <a href="/pages/eventos.html" class="btn btn-outline btn-sm">See full card</a>
-            </div>
-          </div>
-
-          <div class="event-card">
-            <div class="event-date-block">
-              <span class="day">25</span>
-              <span class="month">July</span>
-            </div>
-            <div class="event-info">
-              <span class="badge badge-outline">UFC</span>
-              <h3 class="event-name">UFC Fight Night: Ankalaev vs Guskov</h3>
-              <span class="event-location">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                Etihad Arena, Abu Dhabi (UAE)
-              </span>
-              <p class="event-main-fight">Magomed Ankalaev <span>vs</span> Bogdan Guskov</p>
-            </div>
-            <div class="event-cta">
-              <a href="/pages/eventos.html" class="btn btn-outline btn-sm">See full card</a>
-            </div>
-          </div>
-
-          <div class="event-card">
-            <div class="event-date-block">
-              <span class="day">15</span>
-              <span class="month">August</span>
-            </div>
-            <div class="event-info">
-              <span class="badge badge-accent">UFC 330</span>
-              <h3 class="event-name">Makhachev vs Machado Garry — title fight</h3>
-              <span class="event-location">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                Xfinity Mobile Arena, Philadelphia (USA)
-              </span>
-              <p class="event-main-fight">Islam Makhachev <span>vs</span> Ian Machado Garry</p>
-            </div>
-            <div class="event-cta">
-              <a href="/pages/eventos.html" class="btn btn-outline btn-sm">See full card</a>
-            </div>
-          </div>
+        <div class="versiculo">
+          <p><b>✨ Versículo do dia</b></p>
+          <div id="versiculo"><blockquote>“Deixem vir a mim as crianças, não as impeçam.”</blockquote><cite>Marcos 10:14</cite></div>
         </div>
       </div>
     </section>
 
-    <!-- =================== RECENT RESULTS =================== -->
-    <section class="section section--tight" style="background:var(--bg-subtle);" aria-label="Recent results">
+    <section class="secao">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="section-eyebrow">Post-event coverage</span>
-            <h2 class="section-title">Recent results</h2>
-          </div>
-          <a href="/pages/resultados.html" class="section-link">
-            All results
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+        <div class="secao-titulo">
+          <h2>Histórias para assistir</h2>
         </div>
-
-        <div class="card" style="padding:var(--space-6);">
-          <div class="card-slate-title" style="border:none; padding:0; margin:0 0 var(--space-4);">UFC 329: McGregor vs Holloway 2 · 11 July · Las Vegas</div>
-          <div class="fight-row">
-            <span class="fight-weight">Lightweight (catchweight)</span>
-            <span class="fight-fighters">Max Holloway <span class="vs">beat</span> Conor McGregor</span>
-            <span class="fight-result"><strong>TKO</strong>R1, 1:09</span>
-          </div>
-          <div class="fight-row">
-            <span class="fight-weight">Lightweight</span>
-            <span class="fight-fighters">Paddy Pimblett <span class="vs">beat</span> Benoît Saint Denis</span>
-            <span class="fight-result"><strong>Submission</strong>R1, 0:52</span>
-          </div>
-          <div class="fight-row">
-            <span class="fight-weight">Bantamweight</span>
-            <span class="fight-fighters">Mario Bautista <span class="vs">beat</span> Cory Sandhagen</span>
-            <span class="fight-result"><strong>Decision</strong>Unanimous</span>
-          </div>
+        <div class="grade">
+          <a class="miniatura" href="pages/historias.html#davi"><div data-desenho="davi"></div><strong>▶ Davi e o gigante Golias</strong><span>1 Samuel 17</span></a>
+          <a class="miniatura" href="pages/historias.html#daniel"><div data-desenho="daniel"></div><strong>▶ Daniel na cova dos leões</strong><span>Daniel 6</span></a>
+          <a class="miniatura" href="pages/historias.html#jonas"><div data-desenho="jonas"></div><strong>▶ Jonas e o grande peixe</strong><span>Jonas 1–3</span></a>
+          <a class="miniatura" href="pages/historias.html#natal"><div data-desenho="natal"></div><strong>▶ O nascimento de Jesus</strong><span>Lucas 2</span></a>
         </div>
       </div>
     </section>
 
-    <!-- =================== RANKING =================== -->
-    <section class="section" aria-label="Pound-for-pound ranking">
+    <section class="secao">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="section-eyebrow">Updated weekly</span>
-            <h2 class="section-title">Pound-for-pound ranking</h2>
-          </div>
-          <a href="/pages/rankings.html" class="section-link">
-            See all divisions
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-
-        <div style="overflow-x:auto;">
-        <table class="rank-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Fighter</th>
-              <th>Division</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="rank-pos">1</td>
-              <td class="rank-fighter">
-                <span class="rank-fighter-photo"></span>
-                <span class="rank-fighter-name">Islam Makhachev</span>
-              </td>
-              <td>Welterweight</td>
-            </tr>
-            <tr>
-              <td class="rank-pos">2</td>
-              <td class="rank-fighter">
-                <span class="rank-fighter-photo"></span>
-                <span class="rank-fighter-name">Alexander Volkanovski</span>
-              </td>
-              <td>Featherweight</td>
-            </tr>
-            <tr>
-              <td class="rank-pos">3</td>
-              <td class="rank-fighter">
-                <span class="rank-fighter-photo"></span>
-                <span class="rank-fighter-name">Petr Yan</span>
-              </td>
-              <td>Bantamweight</td>
-            </tr>
-            <tr>
-              <td class="rank-pos">4</td>
-              <td class="rank-fighter">
-                <span class="rank-fighter-photo"></span>
-                <span class="rank-fighter-name">Justin Gaethje</span>
-              </td>
-              <td>Lightweight</td>
-            </tr>
-            <tr>
-              <td class="rank-pos">5</td>
-              <td class="rank-fighter">
-                <span class="rank-fighter-photo"></span>
-                <span class="rank-fighter-name">Ilia Topuria</span>
-              </td>
-              <td>Lightweight</td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-        <p class="rank-source" style="margin-top:var(--space-4);">Men's pound-for-pound ranking. Source: ufc.com/rankings, checked 14 July 2026.</p>
-      </div>
-    </section>
-
-    <!-- =================== NEWSLETTER =================== -->
-    <section class="section">
-      <div class="container">
-        <div class="newsletter">
-          <div>
-            <h2 class="newsletter-title">Get the news before everyone else</h2>
-            <p class="newsletter-text">A weekly round-up of the biggest MMA news, results and analysis straight to your inbox. No spam.</p>
-          </div>
-          <div>
-            <form class="newsletter-form" data-newsletter-form novalidate action="https://formsubmit.co/world.mma001@gmail.com" method="POST">
-              <input type="hidden" name="_subject" value="New newsletter sign-up — World MMA" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="form_type" value="newsletter" />
-              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
-              <div class="form-field">
-                <label for="newsletterEmail" class="sr-only">Your email</label>
-                <input type="email" id="newsletterEmail" name="email" class="input" placeholder="youremail@example.com" required autocomplete="email" />
-              </div>
-              <button type="submit" class="btn btn-accent">Subscribe</button>
-            </form>
-            <p class="newsletter-disclaimer">By subscribing, you agree to our <a href="/pages/politica-de-privacidade.html">Privacy Policy</a>. Unsubscribe anytime.</p>
-          </div>
+        <div class="caixa-pais">
+          <h2>👨‍👩‍👧 Para pais e professores</h2>
+          <ul>
+            <li>Sem anúncios, sem cadastro e sem coleta de dados das crianças.</li>
+            <li>Os desenhos podem ser impressos para usar em casa, na escola dominical ou no culto infantil.</li>
+            <li>Cada história e pergunta traz a referência bíblica para vocês lerem juntos.</li>
+          </ul>
+          <p style="margin-top:12px"><a href="pages/pais.html">Saiba mais →</a></p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- =================== FOOTER =================== -->
-  <footer class="site-footer">
-    <div class="container footer-top">
-      <div class="footer-brand">
-        <a href="/" class="brand" aria-label="World MMA — homepage">
-          <img src="/assets/icons/logo.svg" alt="" class="brand-logo" width="40" height="40" />
-          <span class="brand-name">World<br />MMA</span>
-        </a>
-        <p class="footer-about">An independent journalistic portal dedicated to the world of MMA: news, analysis, events and rankings. We have no official affiliation with any fighting organisation.</p>
-      </div>
-
-      <nav aria-label="Sections">
-        <h2 class="footer-heading">Sections</h2>
-        <div class="footer-links">
-          <a href="/pages/categoria.html?cat=ufc">UFC</a>
-          <a href="/pages/categoria.html?cat=bellator">Bellator / PFL</a>
-          <a href="/pages/categoria.html?cat=pfl">PFL</a>
-          <a href="/pages/categoria.html?cat=one">ONE Championship</a>
-          <a href="/pages/categoria.html?cat=jiujitsu">Jiu-Jitsu</a>
-        </div>
-      </nav>
-
-      <nav aria-label="Portal">
-        <h2 class="footer-heading">Portal</h2>
-        <div class="footer-links">
-          <a href="/pages/eventos.html">Events</a>
-          <a href="/pages/resultados.html">Results</a>
-          <a href="/pages/rankings.html">Rankings</a>
-          <a href="/pages/sobre.html">About us</a>
-          <a href="/pages/contato.html">Contact</a>
-        </div>
-      </nav>
-
-      <nav aria-label="Legal">
-        <h2 class="footer-heading">Legal</h2>
-        <div class="footer-links">
-          <a href="/pages/politica-de-privacidade.html">Privacy Policy</a>
-          <a href="/pages/termos-de-uso.html">Terms of Use</a>
-          <a href="/pages/politica-de-cookies.html">Cookie Policy</a>
-          <a href="#" data-cookie-manage>Manage Cookies</a>
-        </div>
-      </nav>
-    </div>
-
+  <footer class="rodape">
     <div class="container">
-      <p class="footer-disclaimer">
-        World MMA is an independent press outlet. The names UFC®, PFL®, ONE Championship® and Bellator® belong to their respective organisations and are mentioned solely for journalistic and informational purposes. There is no affiliation, sponsorship or official endorsement between this portal and the organisations mentioned.
-      </p>
-    </div>
-
-    <div class="container footer-bottom">
-      <span>© <span data-current-year>2026</span> World MMA. All rights reserved.</span>
-      <span>Made for people who live the sport.</span>
+      <p>© <span id="ano">2026</span> Mundo Bíblico Kids · Feito com 💛 para as crianças e suas famílias.</p>
+      <nav aria-label="Links do rodapé">
+        <a href="pages/colorir.html">Colorir</a>
+        <a href="pages/historias.html">Histórias</a>
+        <a href="pages/quiz.html">Quiz</a>
+        <a href="pages/pais.html">Para pais e privacidade</a>
+      </nav>
     </div>
   </footer>
-
-  <!-- =================== MODALS =================== -->
-  <div class="overlay"></div>
-
-  <div class="modal search-modal" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle" tabindex="-1">
-    <div class="modal-header">
-      <h2 class="modal-title" id="searchModalTitle">Search the portal</h2>
-      <button type="button" class="modal-close" data-close-modal aria-label="Close search">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <div class="modal-body">
-      <div class="search-input-wrap">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-        <input type="search" placeholder="Type a fighter, organisation or event..." aria-label="Search field" autofocus />
-      </div>
-      <div class="search-suggestions">
-        <span class="search-suggestion-label">Popular searches</span>
-        <a href="/pages/categoria.html?cat=ufc">UFC news</a>
-        <a href="/pages/rankings.html">Pound-for-pound ranking</a>
-        <a href="/pages/eventos.html">Upcoming events</a>
-        <a href="/pages/categoria.html?cat=feminino">Women's MMA</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="toast-region" aria-live="polite" aria-atomic="true"></div>
-  <button type="button" class="back-to-top" aria-label="Back to top">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-  </button>
-
-  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
-    <div class="cookie-banner-inner">
-      <p class="cookie-banner-text">We use cookies to improve your browsing experience and measure content performance. You can accept all cookies or keep only the ones essential to the site working. Learn more in our <a href="/pages/politica-de-cookies.html">Cookie Policy</a>.</p>
-      <div class="cookie-banner-actions">
-        <button type="button" class="btn btn-ghost btn-sm" data-cookie-reject>Essentials only</button>
-        <button type="button" class="btn btn-accent btn-sm" data-cookie-accept>Accept all</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="/assets/js/main.js" defer></script>
+  <script src="assets/js/desenhos.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>

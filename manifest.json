@@ -1,20 +1,19 @@
 {
-  "name": "World MMA — MMA News",
-  "short_name": "World MMA",
-  "description": "Independent portal for MMA news, events, results and rankings.",
+  "name": "Mundo Bíblico Kids",
+  "short_name": "Bíblia Kids",
+  "description": "Desenhos bíblicos para colorir, histórias animadas e quiz bíblico para crianças.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#0a0a0b",
-  "theme_color": "#0a0a0b",
-  "lang": "en-GB",
-  "orientation": "portrait-primary",
+  "background_color": "#fff8ec",
+  "theme_color": "#ff7a59",
+  "lang": "pt-BR",
   "icons": [
     {
       "src": "/assets/icons/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }

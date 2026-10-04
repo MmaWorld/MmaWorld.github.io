@@ -34,7 +34,7 @@ http.createServer((req, res) => {
 
   fs.readFile(filePath, (err, data) => {
     if (err) {
-      fs.readFile(path.join(root, 'pages', '404.html'), (err2, notFoundPage) => {
+      fs.readFile(path.join(root, '404.html'), (err2, notFoundPage) => {
         res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
         res.end(notFoundPage || 'Not found');
       });

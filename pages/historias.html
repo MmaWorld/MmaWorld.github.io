@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Histórias Bíblicas Animadas — Mundo Bíblico Kids</title>
+  <meta name="description" content="Histórias bíblicas infantis animadas e narradas: Criação, Noé, Moisés, Davi e Golias, Daniel, Jonas, Natal e a ovelha perdida.">
+  <link rel="canonical" href="https://mmaworld.github.io/pages/historias.html">
+  <meta name="theme-color" content="#ff7a59">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Mundo Bíblico Kids">
+  <meta property="og:title" content="Histórias Bíblicas Animadas — Mundo Bíblico Kids">
+  <meta property="og:description" content="Histórias bíblicas infantis animadas e narradas: Criação, Noé, Moisés, Davi e Golias, Daniel, Jonas, Natal e a ovelha perdida.">
+  <meta property="og:url" content="https://mmaworld.github.io/pages/historias.html">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo">
+    <div class="container">
+      <a class="logo" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#ff7a59"/><path d="M8 20 Q20 14 32 20 Q44 14 56 20 L56 50 Q44 44 32 50 Q20 44 8 50 Z" fill="#fff" stroke="#2d2a32" stroke-width="3" stroke-linejoin="round"/><path d="M32 20 L32 50" stroke="#2d2a32" stroke-width="3"/><path d="M32 40 C24 34 22 28 26 25 C29 23 31 25 32 27 C33 25 35 23 38 25 C42 28 40 34 32 40 Z" fill="#ff6b9d" stroke="#2d2a32" stroke-width="2.5" stroke-linejoin="round"/></svg><span>Mundo Bíblico Kids<small>Aprender a Bíblia brincando</small></span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">☰</button>
+      <nav class="menu" id="menu" aria-label="Menu principal">
+        <a href="../index.html">🏠 Início</a>
+        <a href="colorir.html">🖍️ Colorir</a>
+        <a href="historias.html" aria-current="page">📖 Histórias</a>
+        <a href="quiz.html">❓ Quiz</a>
+        <a href="pais.html">👨‍👩‍👧 Pais</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="secao">
+      <div class="container">
+        <div id="lista-caixa">
+          <div class="secao-titulo">
+            <h1>📖 Histórias bíblicas animadas</h1>
+            <p>Escolha uma história e aperte <b>▶ Assistir</b> para ouvir a narração, ou leia cena por cena.</p>
+          </div>
+          <div class="grade" id="lista-historias"></div>
+        </div>
+
+        <div class="oculto" id="player">
+          <div class="topo-pintar">
+            <div>
+              <h2 id="titulo-historia">História</h2>
+              <span class="ref" id="ref-historia"></span>
+            </div>
+            <button class="btn claro pequeno" type="button" id="btn-voltar">⬅ Todas as histórias</button>
+          </div>
+          <div class="player">
+            <div class="palco">
+              <div class="arte" id="arte"></div>
+              <div class="efeito" id="efeito" aria-hidden="true"></div>
+            </div>
+            <div class="legenda" id="legenda" aria-live="polite"></div>
+            <div class="pontinhos" id="pontinhos"></div>
+            <div class="controles">
+              <div class="grupo">
+                <button class="btn" type="button" id="btn-play">▶ Assistir</button>
+                <button class="btn claro pequeno" type="button" id="btn-narrar">🔊 Narração ligada</button>
+              </div>
+              <div class="grupo">
+                <button class="btn claro" type="button" id="btn-ant">◀ Voltar</button>
+                <button class="btn azul" type="button" id="btn-prox">Próxima ▶</button>
+              </div>
+            </div>
+            <div class="final" id="final">
+              <h3>💡 O que aprendemos?</h3>
+              <p id="licao"></p>
+              <div class="acoes">
+                <a class="btn azul pequeno" id="link-colorir" href="colorir.html">🖍️ Colorir este desenho</a>
+                <a class="btn verde pequeno" href="quiz.html">⭐ Jogar o quiz</a>
+                <button class="btn claro pequeno" type="button" id="btn-repetir">🔁 Assistir de novo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>© <span id="ano">2026</span> Mundo Bíblico Kids · Feito com 💛 para as crianças e suas famílias.</p>
+      <nav aria-label="Links do rodapé">
+        <a href="colorir.html">Colorir</a>
+        <a href="historias.html">Histórias</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="pais.html">Para pais e privacidade</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../assets/js/desenhos.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/historias.js"></script>
+</body>
+</html>

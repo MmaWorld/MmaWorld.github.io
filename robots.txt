@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-Disallow: /pages/404.html
-
 Sitemap: https://mmaworld.github.io/sitemap.xml
